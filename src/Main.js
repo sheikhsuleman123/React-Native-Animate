@@ -16,21 +16,6 @@ const DATA = [
   ];
   
 export default class Main extends Component {
-    constructor(props) {
-        super();
-
-        const panResponder = PanResponder.create({
-        onStartShouldSetPanResponder : () => true,
-        onPanResponderMove: (event, gesture) => {
-          alert(gesture);
-        },
-        onPanResponderRelease:  () => {}
-        
-      });
-
-      
-        this.state = { panResponder };
-    }
         renderCard(item) {
             return (
                 <Card
@@ -51,13 +36,13 @@ export default class Main extends Component {
 
   render() {
     return (
-      <View style={{backgroundColor:'#F5F5F5'}}>
+      <ScrollView style={{backgroundColor:'#F5F5F5'}}>
     
         <Deck 
         data={DATA}
         renderCard={this.renderCard}
         />
-      </View>
+      </ScrollView>
     );
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {Text, View, ScrollView,PanResponder } from 'react-native';
-import {Card, Button} from 'react-native-elements';
+import {Text, View, ScrollView } from 'react-native';
+import {Card,Button} from 'react-native-elements';
+
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Deck from './Deck';
@@ -18,13 +19,7 @@ const DATA = [
   
 export default class Main extends Component {
 
-    state = {
-      colur :  '#dcdcdc'
-    }
-    
-
         renderCard(item) {
-          
           return (
                 <Card
                 key={item.id}
@@ -34,36 +29,81 @@ export default class Main extends Component {
                <View style={{justifyContent:'space-between',flexDirection:'row'}}>
                 
                 <Button
-                    icon={
-                      <Icon
+                      titleStyle={{
+                        color:'grey'
+                      }}
+                      buttonStyle={{
+                        backgroundColor:'#fff',
+                        
+                      }}      icon={
+                     <Icon
                       name="thumbs-up"
                       size={25}
-                        />
+                      color="grey"
+                      />
                       }
-                    title="Like"
+                    title=" Like"
+                    // type="outline"
                       />
               
                   {/* <Icon name="thumbs-up" size={27} color='blue' /> */}
+                  <Button
+               titleStyle={{
+                color:'grey',
+                fontSize:18
+              }}
+             
+              buttonStyle={{
+                backgroundColor:'#fff',
+                
+                // width:'100%'
+                }}
+                title=" Detail"
+                icon={
+                  <Icon
+                  
+                    name="book"
+                    size={20}
+                    
+                /> } 
+
+               />
                
                <Button 
+            
+               titleStyle={{
+                 color:'grey',
+                 fontSize:18
+               }}
+                buttonStyle={{
+                  backgroundColor:'#fff',
+                
+                }} 
                     icon={
-                      <Icon
-                        name="heart"
-                        size={25}
-                      />
+                    <Icon
+                  
+                    name="heart"
+                    size={22}
+                    />
                   }
-                  title=  'favourite'
+                  title=" Fav"
+                  // type="outline"
                   />
 
                </View>        
-                <Text style={{marginBottom: 10}}>I can change the card</Text>
-              
+                
+                {/* <Text style={{marginBottom: 10}}>I can change the card</Text> */}
+{/*               
                <Button
-              containerStyle={[{ backgroundColor: 'red' }]}
-               title='Explore Now'
-               iconRight={true}
-               color="white"
+               buttonStyle={{
+                 width:"40%"
+                
+                }} 
+               title="Detail"
+               
                />
+               */}
+               
               
               
                 </Card>
@@ -72,7 +112,7 @@ export default class Main extends Component {
 
   render() {
     return (
-      <ScrollView style={{backgroundColor:'#F5F5F5'}}>
+      <ScrollView style={{backgroundColor:'#F5F5DC'}}>
     
         <Deck 
         data={DATA}

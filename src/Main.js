@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Text, View, ScrollView,PanResponder } from 'react-native';
 import {Card, Button} from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Deck from './Deck';
 
@@ -16,6 +17,11 @@ const DATA = [
   ];
   
 export default class Main extends Component {
+
+    state = {
+      colur :  '#dcdcdc'
+    }
+
         renderCard(item) {
             return (
                 <Card
@@ -23,13 +29,19 @@ export default class Main extends Component {
                 title={item.text}
                 image={{uri: item.uri}}
                 >
+               <View style={{justifyContent:'space-between',flexDirection:'row'}}>
+               <Icon name="thumbs-up" size={27} color='blue' />
+               <Icon name="heart" size={25} color="red" />
+               </View>        
                 <Text style={{marginBottom: 10}}>I can change the card</Text>
+              
                <Button icon={{name: 'code'}}
                backgroundColor='#eee'
                title='Explore Now'
                color="white"
                />
-                
+              
+              
                 </Card>
             )
         }

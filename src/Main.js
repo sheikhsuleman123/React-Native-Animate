@@ -21,23 +21,47 @@ export default class Main extends Component {
     state = {
       colur :  '#dcdcdc'
     }
+    
 
         renderCard(item) {
-            return (
+          
+          return (
                 <Card
                 key={item.id}
                 title={item.text}
                 image={{uri: item.uri}}
                 >
                <View style={{justifyContent:'space-between',flexDirection:'row'}}>
-               <Icon name="thumbs-up" size={27} color='blue' />
-               <Icon name="heart" size={25} color="red" />
+                
+                <Button
+                    icon={
+                      <Icon
+                      name="thumbs-up"
+                      size={25}
+                        />
+                      }
+                    title="Like"
+                      />
+              
+                  {/* <Icon name="thumbs-up" size={27} color='blue' /> */}
+               
+               <Button 
+                    icon={
+                      <Icon
+                        name="heart"
+                        size={25}
+                      />
+                  }
+                  title=  'favourite'
+                  />
+
                </View>        
                 <Text style={{marginBottom: 10}}>I can change the card</Text>
               
-               <Button icon={{name: 'code'}}
-               backgroundColor='#eee'
+               <Button
+              containerStyle={[{ backgroundColor: 'red' }]}
                title='Explore Now'
+               iconRight={true}
                color="white"
                />
               

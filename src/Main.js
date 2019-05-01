@@ -18,7 +18,13 @@ const DATA = [
   ];
   
 export default class Main extends Component {
+constructor(props){
+  super(props);
 
+    this.state = {
+      count:786,
+    }
+  }
         renderCard(item) {
           return (
                 <Card
@@ -33,7 +39,7 @@ export default class Main extends Component {
                         color:'grey'
                       }}
                       buttonStyle={{
-                        backgroundColor:'#fff',
+                      backgroundColor:'#fff',
                         
                       }}      icon={
                      <Icon
@@ -44,7 +50,8 @@ export default class Main extends Component {
                       }
                     title=" Like"
                     // type="outline"
-                      />
+                    />
+                    
               
                   {/* <Icon name="thumbs-up" size={27} color='blue' /> */}
                   <Button
@@ -61,7 +68,6 @@ export default class Main extends Component {
                 title=" Detail"
                 icon={
                   <Icon
-                  
                     name="book"
                     size={20}
                     

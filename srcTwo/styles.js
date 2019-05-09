@@ -1,13 +1,13 @@
 export const styles = {
 
-        container: {
-            flex:1,
-            backgroundColor:'#FFFFE0',
-            alignItems:'center'
+    container: {
+    flex:1,
+    backgroundColor:'#F5F5DC',
+    alignItems:'center'
         },
     cardContainer : {
      margin:7, 
-     backgroundColor:"#FAEBD7"
+     backgroundColor:"#FFF"
     },
     cardHeading: {
      textAlign:'center',

@@ -1,6 +1,8 @@
 import React, {Component } from 'react';
 import {Text , View,ScrollView,Image,StyleSheet,Alert,TouchableOpacity } from 'react-native';
 
+import {styles} from './styles';
+
 import Icon from 'react-native-vector-icons/FontAwesome'
 
  class Deck extends Component {
@@ -10,7 +12,7 @@ render() {
   return(
     <ScrollView style={{width:'97%',alignContent:'center'}}>
     {
-     this.props.dataObj.map((obj,index)=> {
+     this.props.dataObj.map((obj)=> {
       return(
         <View key={obj.id} style={styles.cardContainer}>
           
@@ -36,6 +38,7 @@ render() {
          </View>
 
         </View>
+        
       );
      })
     }
@@ -43,37 +46,5 @@ render() {
         );
     }
 }
-const styles = StyleSheet.create({
-    cardContainer :{
-     margin:7, 
-     backgroundColor:"#FAEBD7"
-    },
-    cardHeading: {
-     textAlign:'center',
-     fontSize:17,
-     fontWeight:'bold',
-     paddingVertical:15
-    },
-    imageContainer:{
-     height:200,
-     width:'100%'
-    },
-    imageStyle:{
-     flex:1,
-     width:null,
-     alignSelf:'stretch'
-    },
-    imageSubHeading:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        paddingVertical:10,
-        paddingHorizontal:20
-    },
-    subHeading:{
-        fontSize:17,
-    },
-    icons:{
-        flexDirection:'row'
-    }
-  });
+
   export default Deck;

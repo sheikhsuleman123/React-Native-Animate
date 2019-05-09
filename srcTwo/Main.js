@@ -1,9 +1,11 @@
 import React , {Component } from 'react';
 import {Text , View ,ScrollView,StyleSheet } from 'react-native';
 
+import {styles} from './styles';
+
 import Deck from './Deck';
 
-export default class Main extends  Component {
+ class Main extends  Component {
     constructor(props) {
         super(props);
 
@@ -27,9 +29,13 @@ export default class Main extends  Component {
 
     render() {
         return(
-            <View style={{flex:1, backgroundColor:'#FFFFE0',alignItems:'center'}}>
+            <View style={styles.container}>
                 <Deck  dataObj={this.state.data} />
             </View>
     );
   }
 }
+
+
+
+export default Main;

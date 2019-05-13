@@ -13,7 +13,7 @@ export const styles = {
      textAlign:'center',
      fontSize:17,
      fontWeight:'bold',
-     paddingVertical:15
+     paddingVertical:10
     },
     imageContainer:{
      height:200,
@@ -25,15 +25,17 @@ export const styles = {
      alignSelf:'stretch'
     },
     imageSubHeading:{
+        width:'30%',
         flexDirection:'row',
-        justifyContent:'space-between',
-        paddingVertical:10,
-        paddingHorizontal:20
+        justifyContent:"space-between",
+        alignSelf:'flex-end',
+        marginRight:5,
+        marginVertical:10,
     },
     subHeading:{
         fontSize:17,
     },
     icons:{
-        flexDirection:'row'
+        // flexDirection:'flex-end'
     }
   };

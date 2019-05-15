@@ -13,6 +13,7 @@ import Deck from './Deck';
         data:[]
     }
 }
+
     componentWillMount() {
         this.setState({
     data : [

@@ -4,14 +4,26 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import DashboardScreen from './srcTwo/Dashboard';
 import CardsScreen from './srcTwo/Main';
+import DashboardDetails from './srcTwo/DashboardDetails';
+
+
+import Login from './src/signupTwo';
+import Signup from './src/Signup';
+import Detail from './src/signupDetails';
 
 Navigation.registerComponent('Animate.DashboardScreen', () => DashboardScreen);
 Navigation.registerComponent('Animate.CardsScreen', () => CardsScreen);
+Navigation.registerComponent('Animate.DashboardDetails', () => DashboardDetails);
+
+Navigation.registerComponent('Animate.Login', () => Login);
+Navigation.registerComponent('Animate.Signup', () => Signup);
+Navigation.registerComponent('Animate.Detail', () => Detail);
+
+export default () => {
 
   Promise.all([
     Icon.getImageSource('ios-briefcase',30),
-    Icon.getImageSource('ios-briefcase',30),
-  
+    Icon.getImageSource('ios-briefcase',30),  
   ]).then(src => {
   
     Navigation.startTabBasedApp({
@@ -27,7 +39,7 @@ Navigation.registerComponent('Animate.CardsScreen', () => CardsScreen);
         icon: src[1],
         screen: 'Animate.CardsScreen',
         title: 'Dashboard Screen'
-      }
+      },
     ],
     tabsStyle: 
     { // optional, add this if you want to style the tab bar beyond the defaults
@@ -69,4 +81,4 @@ Navigation.registerComponent('Animate.CardsScreen', () => CardsScreen);
   }
   });
   });
-
+}

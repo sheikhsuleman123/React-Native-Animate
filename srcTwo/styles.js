@@ -10,8 +10,9 @@ export const styles = {
      backgroundColor:"#FFF"
     },
     cardHeading: {
-     textAlign:'center',
      fontSize:17,
+     marginRight: 60,
+     color:'black',
      fontWeight:'bold',
      paddingVertical:10
     },
@@ -25,7 +26,7 @@ export const styles = {
      alignSelf:'stretch'
     },
     imageSubHeading:{
-        width:'30%',
+        // width:'50%',
         flexDirection:'row',
         justifyContent:"space-between",
         alignSelf:'flex-end',

@@ -13,25 +13,32 @@ import Icon from 'react-native-vector-icons/FontAwesome'
     {
      this.props.dataObj.map((obj)=> {
       return(
+
         <View key={obj.id} style={styles.cardContainer}>
-          <Text style={styles.cardHeading}>{obj.text}</Text>
+          {/* <Text style={styles.cardHeading}>{obj.text}</Text> */}
           <View style={styles.imageContainer}> 
           <Image source={{uri: obj.uri}}  style={styles.imageStyle}/>
           </View>
+           
 
-         <View style={styles.imageSubHeading}>
-             <TouchableOpacity style={styles.icons} onPress={()=> {Alert.alert("Like is Clicked")}}>
-                 {/* <Text style={styles.subHeading}> Like </Text> */}
-                 <Icon name="thumbs-up" size={22} color="grey" style={{marginTop:1}} />
+         <View style={{flexDirection:'row',justifyContent:'flex-end'}}>
+           <View>
+            <Text style={styles.cardHeading}>{obj.text}</Text>
+            </View>
+            <View style={{flexDirection:'row',paddingVertical:10,marginRight:10}}>
+             <TouchableOpacity style={{flexDirection:'row'}} onPress={()=> {Alert.alert("Like is Clicked")}}>
+                 <Text style={{fontSize: 20,color:'black'}}> 98% </Text>
+                 <Icon name="smile" size={22} color="grey"  />
              </TouchableOpacity>
-             <TouchableOpacity style={styles.icons} onPress={()=> {Alert.alert("Detail is Clicked")}}>
-                 {/* <Text style={styles.subHeading}> Detail </Text> */}
-                 <Icon name="book" size={20}  style={{marginTop:2}} />
+             <TouchableOpacity style={{flexDirection:'row'}} onPress={()=> {Alert.alert("Detail is Clicked")}}>
+                 <Text style={{fontSize: 20,color:'black'}}> 34% </Text>
+                 <Icon name="frown" size={20}   />
              </TouchableOpacity>
-             <TouchableOpacity style={styles.icons} onPress={()=> {Alert.alert("Fav is Clicked")}}>
+             </View>
+             {/* <TouchableOpacity style={styles.icons} onPress={()=> {Alert.alert("Fav is Clicked")}}> */}
                  {/* <Text style={styles.subHeading}> Fav </Text> */}
-                 <Icon name="heart" size={20}  style={{marginTop:2}} />
-             </TouchableOpacity>
+                 {/* <Icon name="heart" size={20}  style={{marginTop:2}} /> */}
+             {/* </TouchableOpacity> */}
          </View>
 
         </View>

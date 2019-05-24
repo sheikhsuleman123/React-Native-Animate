@@ -6,18 +6,10 @@ import DashboardScreen from './srcTwo/Dashboard';
 import CardsScreen from './srcTwo/Main';
 import DashboardDetails from './srcTwo/DashboardDetails';
 
-
-import Login from './src/signupTwo';
-import Signup from './src/Signup';
-import Detail from './src/signupDetails';
-
 Navigation.registerComponent('Animate.DashboardScreen', () => DashboardScreen);
 Navigation.registerComponent('Animate.CardsScreen', () => CardsScreen);
 Navigation.registerComponent('Animate.DashboardDetails', () => DashboardDetails);
 
-Navigation.registerComponent('Animate.Login', () => Login);
-Navigation.registerComponent('Animate.Signup', () => Signup);
-Navigation.registerComponent('Animate.Detail', () => Detail);
 
 export default () => {
 
@@ -77,7 +69,7 @@ export default () => {
     navigationBarColor: 'purple',
     // backButtonImage: require('./pathToImage.png') // Change the back button default arrow image with provided image. iOS only
     // hideBackButtonTitle: true/false // Hide back button title. Default is false. If `backButtonTitle` provided so it will take into account and the `backButtonTitle` value will show. iOS only
-    initialTabIndex: 1  
+    initialTabIndex: 1
   }
   });
   });

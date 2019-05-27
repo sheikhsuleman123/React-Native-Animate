@@ -12,6 +12,7 @@ export const styles = {
     cardHeading: {
      fontSize:17,
      marginRight: 60,
+     alignSelf: 'center',
      color:'black',
      fontWeight:'bold',
      paddingVertical:10
@@ -26,10 +27,10 @@ export const styles = {
      alignSelf:'stretch'
     },
     imageSubHeading:{
-        // width:'50%',
+        // width:'30%',
         flexDirection:'row',
-        justifyContent:"space-between",
-        alignSelf:'flex-end',
+        justifyContent:"space-around",
+        // alignSelf:'flex-end',
         marginRight:5,
         marginVertical:10,
     },

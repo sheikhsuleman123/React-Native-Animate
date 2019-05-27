@@ -5,40 +5,55 @@ import {styles} from './styles';
 
 import Icon from 'react-native-vector-icons/FontAwesome'
 
- class Deck extends Component {
+import { Rating, AirbnbRating } from 'react-native-ratings';
 
+ class Deck extends Component {
+  
+  ratingCompleted (rating)  {
+      console.log(rating);
+ }
   render() {
     return(
     <ScrollView style={{width:'97%',alignContent:'center'}}>
     {
      this.props.dataObj.map((obj)=> {
       return(
-
         <View key={obj.id} style={styles.cardContainer}>
-          {/* <Text style={styles.cardHeading}>{obj.text}</Text> */}
+          <Text style={styles.cardHeading}>{obj.text}</Text>
           <View style={styles.imageContainer}> 
           <Image source={{uri: obj.uri}}  style={styles.imageStyle}/>
           </View>
-           
 
-         <View style={{flexDirection:'row',justifyContent:'flex-end'}}>
-           <View>
-            <Text style={styles.cardHeading}>{obj.text}</Text>
-            </View>
-            <View style={{flexDirection:'row',paddingVertical:10,marginRight:10}}>
-             <TouchableOpacity style={{flexDirection:'row'}} onPress={()=> {Alert.alert("Like is Clicked")}}>
-                 <Text style={{fontSize: 20,color:'black'}}> 98% </Text>
-                 <Icon name="smile" size={22} color="grey"  />
+         <View style={styles.imageSubHeading}>
+             <TouchableOpacity style={styles.icons} onPress={()=> {Alert.alert("Like is Clicked")}}>
+                 {/* <Text style={styles.subHeading}> Like </Text> */}
+                 <Icon name="thumbs-up" size={22} color="grey" style={{marginTop:1}} />
              </TouchableOpacity>
-             <TouchableOpacity style={{flexDirection:'row'}} onPress={()=> {Alert.alert("Detail is Clicked")}}>
-                 <Text style={{fontSize: 20,color:'black'}}> 34% </Text>
-                 <Icon name="frown" size={20}   />
+             <TouchableOpacity style={styles.icons} onPress={()=> {Alert.alert("Detail is Clicked")}}>
+                 {/* <Text style={styles.subHeading}> Detail </Text> */}
+                 <Icon name="book" size={20}  style={{marginTop:2}} />
              </TouchableOpacity>
-             </View>
-             {/* <TouchableOpacity style={styles.icons} onPress={()=> {Alert.alert("Fav is Clicked")}}> */}
+             <TouchableOpacity style={styles.icons} onPress={()=> {Alert.alert("Fav is Clicked")}}>
                  {/* <Text style={styles.subHeading}> Fav </Text> */}
-                 {/* <Icon name="heart" size={20}  style={{marginTop:2}} /> */}
-             {/* </TouchableOpacity> */}
+                 <Icon name="heart" size={20}  style={{marginTop:2}} />
+             </TouchableOpacity>
+         </View>
+         
+         <View style={{alignSelf:'flex-end'}}>
+
+         <AirbnbRating
+         defaultRating={0}
+         imageSize={20} 
+         onFinishRating={this.ratingCompleted.bind(this)}
+         /> 
+
+          {/* <Rating
+          type='custom'
+          startingValue={0}
+          ratingCount={5}
+          imageSize={20}
+          onFinishRating={this.ratingCompleted.bind(this)}
+        /> */}
          </View>
 
         </View>

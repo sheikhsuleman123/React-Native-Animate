@@ -32,6 +32,12 @@ export default () => {
         screen: 'Animate.CardsScreen',
         title: 'Dashboard Screen'
       },
+      {
+        label: 'Dashboard',
+        icon: src[1],
+        screen: 'Animate.DashboardDetails',
+        title: 'Dashboard Detail'
+      },
     ],
     tabsStyle: 
     { // optional, add this if you want to style the tab bar beyond the defaults

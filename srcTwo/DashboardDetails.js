@@ -7,7 +7,7 @@ export default class DashboardDetails extends Component {
     constructor(props){
         super(props);
         this.state = {
-            firstName:''
+            firstName:'suleman'
         }
         // this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
       }
